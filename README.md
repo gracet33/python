@@ -8,6 +8,5 @@ Showcasing projects done using Python
    If verification is valid, the text will be translated to Morse code and displayed to the user.
 
    This program was deployed with streamlit.
-
    https://stringtomorseapp.streamlit.app/
 
