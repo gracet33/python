@@ -66,7 +66,7 @@ def player2(one):
         two = 'O'
     return two
 
-#####------------------####
+#####--------PLAYER FUNCTIONS ----------####
 #Functions involved in the action of placing moves
 def moving_position():
     '''Ask player to give input for moving position'''
@@ -96,7 +96,7 @@ def placing_move(player):
         #mapping the board and update remaining available positions on board
 
 
-#Function for AI_Player 2
+#####--------AI FUNCTIONS ----------####
 def calculate_sum(items):
     '''maps each score on each position of the board'''
     score_mapping = {
@@ -200,7 +200,7 @@ def make_move(board, player):
         for key in keys_to_delete:
             del avail_pos[key]
         display_board()
-
+#----------END OF AI PLAYER FUNCTIONS ---------------#
 
 
 #THE GAMEPLAY EXECUTION
@@ -209,7 +209,6 @@ begin_interface()
 player = player1()
 #assign game piece to opponent
 opponent = player2(player)
-
 # Check if AI should go first
 if player == 'O':
     print("Computer will go first.")
