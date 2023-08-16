@@ -107,6 +107,7 @@ def calculate_sum(items):
     return sum(score_mapping[item] for item in items)
 
 def calculate_scores(board):
+        '''Calculate the sum of scores in row, column, and diagonals and store in a score dictionary'''
     scores = {}
     for row_index, row in enumerate(board):
         row_score = calculate_sum(row)
@@ -125,6 +126,7 @@ def calculate_scores(board):
 
 
 def find_empty_positions(board):
+        '''find the index values for empty board positions and return those index values'''
     return [(row_idx, col_idx) for row_idx, row in enumerate(board) for col_idx, cell in enumerate(row) if cell == " "]
 
 def ai_all_moves(board, score):
@@ -182,6 +184,7 @@ def best_move(board):
         return None
 
 def make_move(board, player):
+        '''AI makes a move'''
     global avail_pos
     position = best_move(board)
     if position is not None:
@@ -217,9 +220,11 @@ while len(avail_pos) > 0:
     if placing_move(player):
         make_move(board, opponent)
         scores = calculate_scores(board)
+        #if AI wins, clear available positions and print that it wins.
         if -3 in scores.values():
             avail_pos.clear()
             print("Game ends! AI wins!")
+        #if available position becomes 0 and score values does not include 3 or -3
         if -3 not in scores.values() and 3 not in scores.values() and len(avail_pos) == 0:
             print("\n")
             print("It's a draw!")
